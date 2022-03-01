@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+    <ui:composition>
+        <div id="layoutSidenav_nav">
+            <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+                <div class="sb-sidenav-menu">
+                    <div class="nav">
+                        <div class="sb-sidenav-menu-heading">Core</div>
+
+                        <a class="nav-link" href="index.xhtml">
+
+                            <div class="sb-nav-link-icon">
+
+                                <i class="fas fa-tachometer-alt"></i></div>
+
+                            Roles
+
+                        </a>
+                        
+                        <ul class="nav nav-treeview">
+                            <c:forEach items="#{usuarioSesion.usuLog.tblRolList}" var="rol">
+                                <li class="nav-item">
+                                    <a href="../#{rol.rolTipo}/index.xhtml" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p class="mt-1">#{rol.rolTipo}</p>
+                                    </a>
+                                </li>
+                            </c:forEach>
+                        </ul>
+
+
+                    </div>
+                </div>
+                <div class="sb-sidenav-footer">
+                </div>
+            </nav>
+        </div>
+    </ui:composition>
+</html>
+
